@@ -14,7 +14,7 @@ curl -v --location --request POST 'localhost:8080/room/v1/reservation/' \
 
 }' &&
 #
-#PUT request
+# PUT request
 curl -v --location --request PUT 'localhost:8080/room/v1/reservation/123' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -22,4 +22,7 @@ curl -v --location --request PUT 'localhost:8080/room/v1/reservation/123' \
     "checkOut": "2023-02-01",
     "price": 100
 
-}'
+}' &&
+#
+# DELETE request
+curl -v --location --request DELETE 'localhost:8080/room/v1/reservation/1234'
