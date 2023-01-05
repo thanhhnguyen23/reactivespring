@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # GET request
-curl http://localhost:8080/room/v1/reservation/1234 &&
+curl -v http://localhost:8080/room/v1/reservation/1234 &&
 #
 # POST request
-curl --location --request POST 'localhost:8080/room/v1/reservation/' \
+curl -v --location --request POST 'localhost:8080/room/v1/reservation/' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "roomNumber": 123,
@@ -14,3 +14,12 @@ curl --location --request POST 'localhost:8080/room/v1/reservation/' \
 
 }' &&
 #
+#PUT request
+curl -v --location --request PUT 'localhost:8080/room/v1/reservation/123' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "checkIn": "2023-01-01",
+    "checkOut": "2023-02-01",
+    "price": 100
+
+}'
