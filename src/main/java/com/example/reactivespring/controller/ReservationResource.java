@@ -1,5 +1,6 @@
 package com.example.reactivespring.controller;
 
+import com.example.reactivespring.model.Reservation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
@@ -16,4 +17,10 @@ public class ReservationResource {
         // reservationService.getReservation(roomId);
         return Mono.just("{}");
     }
+
+    @PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<String> createReservation(@RequestBody Mono<Reservation> reservation){
+        return Mono.just("{}");
+    }
+
 }
