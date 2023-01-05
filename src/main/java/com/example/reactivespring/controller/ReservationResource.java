@@ -23,4 +23,8 @@ public class ReservationResource {
         return Mono.just("{}");
     }
 
+    @PutMapping(path = "{roomId}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<String> updatePrice(@PathVariable String roomId, @RequestBody Mono<Reservation> reservation){
+        return Mono.just("{}");
+    }
 }
